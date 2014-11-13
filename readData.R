@@ -6,5 +6,6 @@ readData <- function(){
   household_power_consumption.txt<-unz(powerdata,"household_power_consumption.txt")
   data <- read.table("household_power_consumption.txt",head=TRUE,sep=";",na.strings="?")
   data<-data[(data$Date >= "2007-02-01" & data$Date<= "2007-02-02"),]
+  data$newDate<-as.POSIXct(paste(data$Date, data$Time))
   data
 }
