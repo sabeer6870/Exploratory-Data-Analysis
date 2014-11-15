@@ -1,3 +1,5 @@
+source("readData.R")
+
 plot1<-function(){
   data<-readData()
   png(filename = "plot1.png", width = 480, height = 480, units = "px", bg="transparent")
